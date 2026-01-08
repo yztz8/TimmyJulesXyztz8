@@ -28,7 +28,22 @@
 		<div class="photo" onclick="openModal('keyan2.JPG')">
             <img src="keyan2.JPG" alt="Foto 2">
         </div>
-		
+		    <p id="frage">Kleine Frage am Rande: Glaubst du, dass ich schwul bin?</p>
+
+    <button id="btn" onclick="antwort()">
+        Klick mich und du wirst es erfahren!
+    </button>
+
+    <script>
+        function antwort() {
+            // Button entfernen
+            document.getElementById("btn").style.display = "none";
+            
+            // Text auf "ja" ändern
+            document.getElementById("frage").innerText = "ja, aber sowas von";
+        }
+    </script>
+
 	
 		<div class="photo" onclick="openModal('Keyan.png')">
             <img src="Keyan.png" alt="Foto 1">
@@ -73,6 +88,7 @@ title="Ich goone auf Timmy!" frameborder="0" allow="accelerometer; autoplay; cli
 </h3>
 </body>
 </html>
+
 
 
 
