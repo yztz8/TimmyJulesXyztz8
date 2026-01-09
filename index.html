@@ -30,17 +30,30 @@
         </div>
 		    <p id="frage">Kleine Frage am Rande: Glaubst du, dass ich schwul bin?</p>
 
-    <button id="btn" onclick="antwort()">
-        Klick mich und du wirst es erfahren!
+       <p id="text"></p>
+
+    <button id="btn" onclick="wechseln()">
+        Klick mich um es heraus zu finden
     </button>
 
     <script>
-        function antwort() {
-            // Button entfernen
-            document.getElementById("btn").style.display = "none";
-            
-            // Text auf "ja" ändern
-            document.getElementById("frage").innerText = "ja, aber sowas von";
+        let zustand = 0;
+
+        function wechseln() {
+            const text = document.getElementById("text");
+            const btn = document.getElementById("btn");
+
+            if (zustand === 0) {
+                // Antwort anzeigen
+                text.innerText = "ja";
+                btn.innerText = "Willst du nochmal versuchen? Klicke hier";
+                zustand = 1;
+            } else {
+                // Zurück zum Anfang
+                text.innerText = "Glaubst du ich bin Gay?";
+                btn.innerText = "Klick mich um es heraus zu finden";
+                zustand = 0;
+            }
         }
     </script>
 
@@ -88,6 +101,7 @@ title="Ich goone auf Timmy!" frameborder="0" allow="accelerometer; autoplay; cli
 </h3>
 </body>
 </html>
+
 
 
 
